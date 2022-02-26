@@ -9,22 +9,24 @@ import UIKit
 
 class AllComicsTableViewController: UITableViewController {
     
-    private var comics: [Comic] = []
-
+    var comics: [Comic] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
-        fetchComics()
-
+        NetworkManager.sample.fetchComics { comic in
+            self.comics.append(comic)
+            self.tableView.reloadData()
+        }
     }
-
+    
     // MARK: - Table view data source
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         comics.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ComicCell
         let comic = comics[indexPath.row]
@@ -33,35 +35,12 @@ class AllComicsTableViewController: UITableViewController {
         return cell
     }
     
-
-    private func fetchComics() {
-        guard let url = URL(string: Link.json.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            do {
-                self.comics = try JSONDecoder().decode([Comic].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
-    }
-   /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow {
+            guard let detailsVC = segue.destination as? DetailsViewController else { return }
+            detailsVC.comic = comics[indexPath.row]
+        }
     }
-    */
-
 }

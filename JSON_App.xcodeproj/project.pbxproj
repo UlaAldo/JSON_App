@@ -31,7 +31,7 @@
 		C16D8C5727C77DF4004CF436 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		C16D8C5A27C77E32004CF436 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C19E56A327C88D4A00C9B55D /* AllComicsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllComicsTableViewController.swift; sourceTree = "<group>"; };
-		C19E56A727C8C7F900C9B55D /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicCell.swift; path = JSON_App/ViewControllers/ComicCell.swift; sourceTree = SOURCE_ROOT; };
+		C19E56A727C8C7F900C9B55D /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComicCell.swift; path = JSON_App/Views/ComicCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,7 @@
 				C16D8C5927C77DFA004CF436 /* Models */,
 				C16D8C5C27C77E38004CF436 /* Services */,
 				C16D8C5427C77D91004CF436 /* Storyboards */,
+				C19E56AA27CA09AE00C9B55D /* Views */,
 				C16D8C5327C77D87004CF436 /* Resourses */,
 				C16D8C5527C77DA2004CF436 /* App */,
 			);
@@ -86,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				C16D8C4327C77CCA004CF436 /* Main.storyboard */,
-				C19E56A727C8C7F900C9B55D /* ComicCell.swift */,
 				C16D8C4827C77CCC004CF436 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -125,6 +125,15 @@
 				C16D8C5A27C77E32004CF436 /* NetworkManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C19E56AA27CA09AE00C9B55D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C19E56A727C8C7F900C9B55D /* ComicCell.swift */,
+			);
+			name = Views;
+			path = Storyboards/Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

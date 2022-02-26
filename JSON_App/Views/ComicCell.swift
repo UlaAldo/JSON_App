@@ -8,7 +8,7 @@
 import UIKit
 
 class ComicCell: UITableViewCell {
-
+    
     @IBOutlet var comicImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
@@ -19,7 +19,7 @@ class ComicCell: UITableViewCell {
             guard let imgData = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
                 self.comicImage.image = UIImage(data: imgData)
+            }
         }
     }
-}
 }

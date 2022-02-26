@@ -16,8 +16,5 @@ struct Comic: Decodable {
     let title: String
 }
 
-enum Link: String {
-    case json = "https://xkcd.com/2/info.0.json"
-}
 
 

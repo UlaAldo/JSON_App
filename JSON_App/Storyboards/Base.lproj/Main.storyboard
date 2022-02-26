@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6LC-ce-6px">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,25 +13,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DetailsViewController" customModule="JSON_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gx6-g4-En6">
-                                <rect key="frame" x="16" y="185" width="343" height="249.5"/>
+                                <rect key="frame" x="16" y="229" width="382" height="386.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'Petit' being a reference to Le Petit Prince, which I only thought about halfway through the sketch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDv-hy-LMf">
-                                <rect key="frame" x="16" y="84" width="343" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="128" width="382" height="61"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-z3-CXz">
-                                <rect key="frame" x="16" y="474.5" width="343" height="81.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-z3-CXz">
+                                <rect key="frame" x="16" y="655.5" width="382" height="95.5"/>
                                 <string key="text">let month: String
 let num: Int
 let year: String
-let alt: String</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+let title: String</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,7 +53,9 @@ let alt: String</string>
                     </view>
                     <navigationItem key="navigationItem" id="tjp-VL-jfV"/>
                     <connections>
+                        <outlet property="altLabel" destination="cDv-hy-LMf" id="GpT-NW-KKP"/>
                         <outlet property="comicImageView" destination="Gx6-g4-En6" id="UjO-rF-B5z"/>
+                        <outlet property="descriptionLabel" destination="dB3-z3-CXz" id="A74-ut-ScQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,25 +67,25 @@ let alt: String</string>
             <objects>
                 <tableViewController id="usH-8x-4Hf" customClass="AllComicsTableViewController" customModule="JSON_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Rpc-Wm-aal">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="xTL-Us-JLr" customClass="ComicCell" customModule="JSON_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xTL-Us-JLr" id="u55-DD-PgJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-9D-Yi1">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="21"/>
+                                            <rect key="frame" x="20" y="0.0" width="50" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="S7K-5z-JVK"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41V-KW-9P4">
-                                            <rect key="frame" x="58" y="0.0" width="317" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41V-KW-9P4">
+                                            <rect key="frame" x="90" y="0.0" width="324" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -94,15 +96,15 @@ let alt: String</string>
                                         <constraint firstAttribute="bottom" secondItem="41V-KW-9P4" secondAttribute="bottom" id="Bta-ML-v1g"/>
                                         <constraint firstItem="41V-KW-9P4" firstAttribute="top" secondItem="u55-DD-PgJ" secondAttribute="top" id="IuL-J7-jIl"/>
                                         <constraint firstItem="Khh-9D-Yi1" firstAttribute="top" secondItem="u55-DD-PgJ" secondAttribute="top" id="SVJ-da-Nar"/>
-                                        <constraint firstItem="41V-KW-9P4" firstAttribute="leading" secondItem="Khh-9D-Yi1" secondAttribute="trailing" constant="8" symbolic="YES" id="VmH-lz-UoV"/>
+                                        <constraint firstItem="41V-KW-9P4" firstAttribute="leading" secondItem="Khh-9D-Yi1" secondAttribute="trailing" constant="20" id="VmH-lz-UoV"/>
+                                        <constraint firstItem="Khh-9D-Yi1" firstAttribute="leading" secondItem="u55-DD-PgJ" secondAttribute="leading" constant="20" id="a8b-uu-Sse"/>
                                         <constraint firstAttribute="trailing" secondItem="41V-KW-9P4" secondAttribute="trailing" id="tqV-9d-38k"/>
-                                        <constraint firstItem="Khh-9D-Yi1" firstAttribute="leading" secondItem="u55-DD-PgJ" secondAttribute="leading" id="vXe-qe-icP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="comicImage" destination="Khh-9D-Yi1" id="kx2-ol-0tl"/>
                                     <outlet property="titleLabel" destination="41V-KW-9P4" id="kwK-VR-xmX"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="zxe-mF-d35"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="show" id="zxe-mF-d35"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -122,7 +124,7 @@ let alt: String</string>
             <objects>
                 <navigationController id="6LC-ce-6px" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yuO-hw-dxV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
