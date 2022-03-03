@@ -23,16 +23,17 @@ class DetailsViewController: UIViewController {
     private func fetchImage() {
         altLabel.text = comic.alt
         descriptionLabel.text = """
-    Title: \(comic.title)
-    Number: \(comic.num)
-    Month: \(comic.month)
-    Year: \(comic.year)
+    Title: \(comic.title ?? "")
+    Number: \(comic.num ?? 0)
+    Month: \(comic.month ?? "")
+    Year: \(comic.year ?? "")
     """
-        DispatchQueue.global().async {
-            guard let url = URL(string: self.comic.img) else {return}
-            guard let imgData = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                self.comicImageView.image = UIImage(data: imgData)
+        NetworkManager.sample.fetchImage(from: comic.img){ result in
+            switch result {
+            case .success(let imageData):
+                self.comicImageView.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
             }
         }
     }

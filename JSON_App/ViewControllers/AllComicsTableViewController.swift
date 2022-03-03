@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AllComicsTableViewController: UITableViewController {
     
@@ -14,14 +15,10 @@ class AllComicsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
-        NetworkManager.sample.fetchComics { comic in
-            self.comics.append(comic)
-            self.tableView.reloadData()
-        }
+        addFetchComic()
     }
     
     // MARK: - Table view data source
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         comics.count
@@ -42,5 +39,22 @@ class AllComicsTableViewController: UITableViewController {
             guard let detailsVC = segue.destination as? DetailsViewController else { return }
             detailsVC.comic = comics[indexPath.row]
         }
+    }
+}
+// MARK: - Networking
+extension AllComicsTableViewController {
+    
+    private func addFetchComic() {
+        NetworkManager.sample.fetchDataWithAlamofire { result in
+            switch result {
+            case .success(let comic):
+                self.comics.append(comic)
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        
     }
 }

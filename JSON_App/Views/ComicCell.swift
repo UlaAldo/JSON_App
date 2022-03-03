@@ -14,12 +14,14 @@ class ComicCell: UITableViewCell {
     
     func configure(with comic: Comic){
         titleLabel.text = comic.title
-        DispatchQueue.global().async {
-            guard let url = URL(string: comic.img) else {return}
-            guard let imgData = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                self.comicImage.image = UIImage(data: imgData)
+        NetworkManager.sample.fetchImage(from: comic.img){ result in
+            switch result {
+            case .success(let imageData):
+                self.comicImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
             }
         }
     }
 }
+
