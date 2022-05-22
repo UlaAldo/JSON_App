@@ -41,6 +41,7 @@ class AllComicsTableViewController: UITableViewController {
         }
     }
 }
+
 // MARK: - Networking
 extension AllComicsTableViewController {
     
@@ -53,8 +54,6 @@ extension AllComicsTableViewController {
             case .failure(let error):
                 print(error)
             }
-            
         }
-        
     }
 }

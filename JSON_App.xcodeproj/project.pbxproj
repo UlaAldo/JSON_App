@@ -56,7 +56,6 @@
 				30367B33B0B634CBD5C2FEA7 /* Pods-JSON_App.debug.xcconfig */,
 				732DAAC15286484C37EE20E6 /* Pods-JSON_App.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,10 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				C16D8C5627C77DB3004CF436 /* ViewControllers */,
+				C19E56AA27CA09AE00C9B55D /* Views */,
 				C16D8C5927C77DFA004CF436 /* Models */,
 				C16D8C5C27C77E38004CF436 /* Services */,
 				C16D8C5427C77D91004CF436 /* Storyboards */,
-				C19E56AA27CA09AE00C9B55D /* Views */,
 				C16D8C5327C77D87004CF436 /* Resourses */,
 				C16D8C5527C77DA2004CF436 /* App */,
 			);
