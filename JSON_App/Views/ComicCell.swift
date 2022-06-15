@@ -14,7 +14,7 @@ class ComicCell: UITableViewCell {
     
     func configure(with comic: Comic){
         titleLabel.text = comic.title
-        NetworkManager.sample.fetchImage(from: comic.img){ result in
+        NetworkManager.sample.fetchImage(from: comic.img) { result in
             switch result {
             case .success(let imageData):
                 self.comicImage.image = UIImage(data: imageData)
